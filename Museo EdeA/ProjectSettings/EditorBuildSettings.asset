@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Vista360.unity
+    guid: e0f6e7e7baa6bf04f94818c3c0a32cb3
   m_configObjects: {}
