@@ -13,7 +13,7 @@ public class Display : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.GetComponent<PlayerMove>() != null)
+        if(other.gameObject.GetComponent<Teleportation>() != null)
         {
             manager.playerControl = false;
         }
