@@ -12,7 +12,6 @@ public class CameraManager : MonoBehaviour
     void Start()
     {
         manager = Manager.Instance; 
-        displayCamera.SetActive(false);
         goBackPanel.SetActive(false);
     }
 
@@ -23,16 +22,35 @@ public class CameraManager : MonoBehaviour
     
     public void ChangePlayerCamera()
     {
+        //displayCamera = manager.currentCamera;
         if(manager.playerControl == false)
         {
             displayCamera.SetActive(true);
+            manager.normalCamera.SetActive(false);
             goBackPanel.SetActive(true);
         }
 
         else if(manager.playerControl == true)
         {
-            displayCamera.SetActive(false);
+            //displayCamera.SetActive(false);
             goBackPanel.SetActive(false);
+            manager.normalCamera.SetActive(true);
+            //manager.currentCamera = null;
+        }
+    }
+
+    public void BlendCameras()
+    {
+        switch(manager.id)
+        {
+            case 0:
+            Debug.Log("cero");
+            break;
+
+            case 1:
+            Debug.Log("uno");
+            break;
+
         }
     }
 }

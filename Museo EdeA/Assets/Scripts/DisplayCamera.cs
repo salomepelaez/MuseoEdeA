@@ -4,25 +4,13 @@ using UnityEngine;
 
 public class DisplayCamera : MonoBehaviour
 {
-    Manager manager;
+    public int ID; 
 
-    public Animation anim;
+    Manager manager;
 
     void Awake()
     {
-        manager = Manager.Instance;
-        anim = gameObject.GetComponent<Animation>();
+        manager = Manager.Instance;        
     }
 
-    public void BlendCamera()
-    {
-        StartCoroutine("CameraTransition");
-    }
-    
-    IEnumerator CameraTransition()
-    {
-        yield return new WaitForSeconds(1f);
-
-        anim.Play("cameraTrans");
-    }
 }
