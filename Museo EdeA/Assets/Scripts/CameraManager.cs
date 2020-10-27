@@ -26,7 +26,7 @@ public class CameraManager : MonoBehaviour
         if(manager.playerControl == false)
         {
             displayCamera.SetActive(true);
-            manager.normalCamera.SetActive(false);
+            //manager.normalCamera.SetActive(false);
             goBackPanel.SetActive(true);
         }
 
@@ -34,7 +34,7 @@ public class CameraManager : MonoBehaviour
         {
             //displayCamera.SetActive(false);
             goBackPanel.SetActive(false);
-            manager.normalCamera.SetActive(true);
+            //manager.normalCamera.SetActive(true);
             //manager.currentCamera = null;
         }
     }

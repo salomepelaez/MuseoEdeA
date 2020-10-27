@@ -1528,11 +1528,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f93ce07f3b86cd49a3200b045b084d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalCamera: {fileID: 682755172}
-  cameras: []
-  playerCamera: {fileID: 0}
-  display1: {fileID: 0}
-  display2: {fileID: 0}
+  Cameras:
+  - {fileID: 135709923}
+  - {fileID: 1337837918}
   playerControl: 0
   id: 0
 --- !u!4 &991079510

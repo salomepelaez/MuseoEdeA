@@ -23,6 +23,6 @@ public class Display : MonoBehaviour
     {
         manager.playerControl = false;
         //manager.currentCamera = manager.cameras(0);
-        manager.normalCamera.SetActive(false);
+        //manager.normalCamera.SetActive(false);
     }
 }

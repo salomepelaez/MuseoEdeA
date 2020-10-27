@@ -6,38 +6,59 @@ public class Manager : MonoBehaviour
 {
     public static Manager Instance;
 
-    public GameObject normalCamera;
+    //public GameObject normalCamera;
     //public GameObject currentCamera;
 
-    public List<Camera> cameras;
-    public Camera playerCamera, display1, display2;
+    public Camera[] Cameras;
+    //public Camera playerCamera, display1, display2;
 
     public bool playerControl;
 
     public int id;
+
+    private int selectedCameraIndex;
     
     public void Awake()
     {
         Instance = this;   
-        cameras = new List<Camera>();    
+        //cameras = new List<Camera>();    
 
-        playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        /*playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         display1 = GameObject.FindGameObjectWithTag("DisplayCamera1").GetComponent<Camera>();
         display2 = GameObject.FindGameObjectWithTag("DisplayCamera2").GetComponent<Camera>();
  
-        cameras.Add(playerCamera);
         cameras.Add(display1);   
-        cameras.Add(display2);       
+        cameras.Add(display2);  */     
     }
 
     public void Start()
     {
         playerControl = true;
-        
-        foreach (Camera c in cameras)
+
+        for( int i = 0 ; i < Cameras.Length ; i++ )
         {
             id++;
         }
+
+        Debug.Log(id);
+        
+        DisableCameras();
+    }
+
+    public void SelectCamera( int cameraIndex )
+    {
+        if( cameraIndex >= 0 && cameraIndex < Cameras.Length )
+        {
+            Cameras[selectedCameraIndex].enabled = false;
+            selectedCameraIndex = cameraIndex;
+            Cameras[selectedCameraIndex].enabled = true;
+        }
+    }
+
+    public void DisableCameras()
+    {
+        for( int i = 0 ; i < Cameras.Length ; i++ )
+            Cameras[i].enabled = false;
     }
 
     public void LeaveDisplay()
