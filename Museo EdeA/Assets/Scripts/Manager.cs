@@ -10,11 +10,13 @@ public class Manager : MonoBehaviour
     //public GameObject currentCamera;
 
     public Camera[] Cameras;
+    public GameObject[] displayArray;
     //public Camera playerCamera, display1, display2;
 
     public bool playerControl;
 
     public int id;
+    public int displayID;
 
     private int selectedCameraIndex;
     
@@ -38,6 +40,7 @@ public class Manager : MonoBehaviour
         for( int i = 0 ; i < Cameras.Length ; i++ )
         {
             id++;
+            displayID++;
         }
 
         Debug.Log(id);

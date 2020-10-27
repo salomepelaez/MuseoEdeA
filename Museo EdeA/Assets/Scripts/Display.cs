@@ -15,7 +15,7 @@ public class Display : MonoBehaviour
     {
         if(other.gameObject.GetComponent<Teleportation>() != null)
         {
-            SwitchToDisplayCamera();
+            manager.SelectCamera(manager.id);
         }
     }
 

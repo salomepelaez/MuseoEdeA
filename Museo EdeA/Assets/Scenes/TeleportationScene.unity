@@ -1509,7 +1509,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991079507}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f70159fcfea07514d83fcc7d2f617958, type: 3}
   m_Name: 
@@ -1531,8 +1531,12 @@ MonoBehaviour:
   Cameras:
   - {fileID: 135709923}
   - {fileID: 1337837918}
+  displayArray:
+  - {fileID: 2008463881}
+  - {fileID: 1599922521}
   playerControl: 0
   id: 0
+  displayID: 0
 --- !u!4 &991079510
 Transform:
   m_ObjectHideFlags: 0

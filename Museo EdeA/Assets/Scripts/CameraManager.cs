@@ -18,6 +18,7 @@ public class CameraManager : MonoBehaviour
     void Update()
     {
         ChangePlayerCamera();
+        BlendCameras();
     }
     
     public void ChangePlayerCamera()
@@ -41,14 +42,14 @@ public class CameraManager : MonoBehaviour
 
     public void BlendCameras()
     {
-        switch(manager.id)
+        switch(manager.displayID)
         {
             case 0:
-            Debug.Log("cero");
+            manager.id = 0;
             break;
 
             case 1:
-            Debug.Log("uno");
+            manager.id = 1;
             break;
 
         }
