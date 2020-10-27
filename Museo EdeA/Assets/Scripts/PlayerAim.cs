@@ -40,10 +40,10 @@ public class PlayerAim : MonoBehaviour
             mouseY -= Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
         }
 
-        if (axisLimit > 35.0f)
+        if (axisLimit > 60.0f)
         {
-            axisLimit = 35.0f;
-            mouseY = 35.0f;
+            axisLimit = 60.0f;
+            mouseY = 60.0f;
         }
 
         else if (axisLimit < -25.0f)
