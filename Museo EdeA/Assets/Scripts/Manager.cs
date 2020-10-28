@@ -6,8 +6,8 @@ public class Manager : MonoBehaviour
 {
     public static Manager Instance;
 
-    //public GameObject normalCamera;
-    //public GameObject currentCamera;
+    public GameObject normalCamera;
+    public GameObject currentCamera;
 
     public Camera[] Cameras;
     public GameObject[] displayArray;
@@ -36,14 +36,13 @@ public class Manager : MonoBehaviour
     public void Start()
     {
         playerControl = true;
+        currentCamera = normalCamera;
 
         for( int i = 0 ; i < Cameras.Length ; i++ )
         {
             id++;
             displayID++;
         }
-
-        Debug.Log(id);
         
         DisableCameras();
     }
@@ -62,6 +61,8 @@ public class Manager : MonoBehaviour
     {
         for( int i = 0 ; i < Cameras.Length ; i++ )
             Cameras[i].enabled = false;
+
+        Cameras[0].enabled = true;
     }
 
     public void LeaveDisplay()

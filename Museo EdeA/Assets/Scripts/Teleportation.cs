@@ -6,6 +6,13 @@ public class Teleportation : MonoBehaviour
 {
     private UnityEngine.AI.NavMeshAgent mNavMeshAgent;
 
+    public Manager manager;
+
+    public void Awake()
+    {
+        manager = Manager.Instance;
+    }
+
     void Start()
     {
         mNavMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
@@ -13,7 +20,10 @@ public class Teleportation : MonoBehaviour
     
     void Update()
     {
-        ClickToMove();
+        if(manager.playerControl == true)
+        {
+            ClickToMove();
+        }
     }
 
     void ClickToMove()

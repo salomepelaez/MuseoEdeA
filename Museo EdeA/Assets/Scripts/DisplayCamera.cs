@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class DisplayCamera : MonoBehaviour
 {
-    public int ID; 
+    public Manager manager;
 
-    Manager manager;
+    
 
-    void Awake()
+    public void Awake()
     {
         manager = Manager.Instance;        
     }

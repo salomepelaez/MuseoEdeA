@@ -2,23 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraManager : MonoBehaviour
+public class CameraManager : Display
 {
     public GameObject displayCamera;
     public GameObject goBackPanel;
 
-    Manager manager;
-
-    void Start()
+    public void Update()
     {
-        manager = Manager.Instance; 
-        goBackPanel.SetActive(false);
-    }
-
-    void Update()
-    {
-        ChangePlayerCamera();
-        BlendCameras();
+        ChangePlayerCamera();        
     }
     
     public void ChangePlayerCamera()
@@ -26,32 +17,37 @@ public class CameraManager : MonoBehaviour
         //displayCamera = manager.currentCamera;
         if(manager.playerControl == false)
         {
-            displayCamera.SetActive(true);
             //manager.normalCamera.SetActive(false);
             goBackPanel.SetActive(true);
+            BlendCameras();
         }
 
         else if(manager.playerControl == true)
         {
-            //displayCamera.SetActive(false);
             goBackPanel.SetActive(false);
-            //manager.normalCamera.SetActive(true);
-            //manager.currentCamera = null;
+            manager.currentCamera = manager.normalCamera;
         }
     }
 
     public void BlendCameras()
     {
-        switch(manager.displayID)
+        switch(_id)
         {
             case 0:
-            manager.id = 0;
+            _id = 0;
+            manager.Cameras[0].enabled = true;
             break;
 
             case 1:
-            manager.id = 1;
+            _id = 1;
+            manager.Cameras[1].enabled = true;
             break;
 
-        }
+            case 2:
+            _id = 2;
+            manager.Cameras[2].enabled = true;
+            break;
+
+        } //Cameras[i].enabled = false;
     }
 }
