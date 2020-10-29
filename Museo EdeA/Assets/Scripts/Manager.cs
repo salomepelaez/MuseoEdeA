@@ -68,6 +68,6 @@ public class Manager : MonoBehaviour
     public void LeaveDisplay()
     {
         playerControl = true;
-        //currentCamera = null;
+        DisableCameras();
     }
 }
