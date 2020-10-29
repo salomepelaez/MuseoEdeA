@@ -31,23 +31,26 @@ public class CameraManager : Display
 
     public void BlendCameras()
     {
-        switch(_id)
+        /*switch(_id)
         {
             case 0:
             _id = 0;
-            manager.Cameras[0].enabled = true;
+            manager.Cameras[0].gameObject.SetActive(true);
             break;
 
             case 1:
             _id = 1;
-            manager.Cameras[1].enabled = true;
+            manager.Cameras[0].gameObject.SetActive(false);
+            manager.Cameras[1].gameObject.SetActive(true);
             break;
 
             case 2:
             _id = 2;
-            manager.Cameras[2].enabled = true;
+            manager.Cameras[2].gameObject.SetActive(true);
             break;
 
-        } //Cameras[i].enabled = false;
+        } */
+
+        manager.currentCamera.SetActive(true);
     }
 }

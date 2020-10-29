@@ -25,8 +25,9 @@ public class Display : MonoBehaviour
     {
         manager.playerControl = false;
         manager.currentCamera = this.gameObject.transform.GetChild(0).gameObject;
+        Debug.Log(manager.currentCamera);
         //Debug.Log(currentCamera);
-        manager.Cameras[_id].enabled = true;
-        manager.Cameras[0].enabled = false;
+        //manager.Cameras[_id].enabled = true;
+        //manager.Cameras[0].enabled = false;
     }
 }

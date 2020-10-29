@@ -60,9 +60,9 @@ public class Manager : MonoBehaviour
     public void DisableCameras()
     {
         for( int i = 0 ; i < Cameras.Length ; i++ )
-            Cameras[i].enabled = false;
+            Cameras[i].gameObject.SetActive(false);
 
-        Cameras[0].enabled = true;
+        Cameras[0].gameObject.SetActive(true);
     }
 
     public void LeaveDisplay()
