@@ -88,6 +88,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2408748353669089926}
+  - component: {fileID: 70015358355266585}
+  - component: {fileID: 7850017384016031430}
   m_Layer: 0
   m_Name: gabineteGrande002
   m_TagString: Untagged
@@ -116,6 +118,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &70015358355266585
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672750834537347221}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 17.494324, y: 9.219015, z: 5.300923}
+  m_Center: {x: -5.9008102, y: 3.288318, z: 0.10382738}
+--- !u!208 &7850017384016031430
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672750834537347221}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 8, y: 5, z: 3}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -6, y: 4, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &2176847540937169231
 GameObject:
   m_ObjectHideFlags: 0
