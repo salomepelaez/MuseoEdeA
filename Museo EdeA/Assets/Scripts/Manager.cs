@@ -9,7 +9,7 @@ public class Manager : MonoBehaviour
     public GameObject normalCamera;
     public GameObject currentCamera;
 
-    public Camera[] Cameras;
+    public GameObject[] Cameras;
     public GameObject[] displayArray;
     //public Camera playerCamera, display1, display2;
 
@@ -47,7 +47,7 @@ public class Manager : MonoBehaviour
         DisableCameras();
     }
 
-    public void SelectCamera( int cameraIndex )
+    /*public void SelectCamera( int cameraIndex )
     {
         if( cameraIndex >= 0 && cameraIndex < Cameras.Length )
         {
@@ -55,14 +55,14 @@ public class Manager : MonoBehaviour
             selectedCameraIndex = cameraIndex;
             Cameras[selectedCameraIndex].enabled = true;
         }
-    }
+    }*/
 
     public void DisableCameras()
     {
         for( int i = 0 ; i < Cameras.Length ; i++ )
-            Cameras[i].gameObject.SetActive(false);
+            Cameras[i].SetActive(false);
 
-        Cameras[0].gameObject.SetActive(true);
+        Cameras[0].SetActive(true);
     }
 
     public void LeaveDisplay()
