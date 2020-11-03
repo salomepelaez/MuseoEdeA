@@ -16,7 +16,7 @@ public class Display : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.GetComponent<Teleportation>() != null)
+        if(other.gameObject.GetComponent<Teleportation>() != null && manager.playerControl == true)
         {
             SwitchToDisplayCamera();
         }
@@ -27,8 +27,8 @@ public class Display : MonoBehaviour
         manager.playerControl = false;
         manager.currentCamera = this.gameObject.transform.GetChild(0).gameObject;
         Debug.Log(manager.currentCamera);
-        //displayID = _id;
-        //Debug.Log("Display number " + displayID);
+        displayID = _id;
+        Debug.Log("Display number " + displayID);
         //Debug.Log(currentCamera);
         //manager.Cameras[_id].enabled = true;
         //manager.Cameras[0].enabled = false;
