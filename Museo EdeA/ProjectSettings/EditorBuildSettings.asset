@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Vista360.unity
-    guid: e0f6e7e7baa6bf04f94818c3c0a32cb3
+    path: Assets/Scenes/TeleportationScene.unity
+    guid: acb75837eb967e94cb453488e2388b6e
   m_configObjects: {}
