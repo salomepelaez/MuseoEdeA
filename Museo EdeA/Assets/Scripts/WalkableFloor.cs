@@ -30,9 +30,12 @@ public class WalkableFloor : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
+
         if (Physics.Raycast(ray, out hit, 100)) 
         {    
+            //Vector3 newPos = new Vector3(hit.transform.position.x, 0.5f, hit.transform.position.y);
             particles.transform.position = hit.point;
+            //particles.transform.position = newPos;
         }
     }
 }
