@@ -9,6 +9,10 @@ public class Display : MonoBehaviour
     public int _id; 
     public int displayID;
 
+    public GameObject model;
+
+    private float speed = 1f;
+
     public void Start()
     {
         manager = Manager.Instance;
@@ -22,6 +26,25 @@ public class Display : MonoBehaviour
         }
     }
 
+    public void OnTriggerStay(Collider other)
+    {
+        if(other.gameObject.GetComponent<Teleportation>())
+        {
+            if(model.transform.position.y <= 5.05f)
+            {
+                StartCoroutine("MoveModel");
+            }
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.GetComponent<Teleportation>() != null)
+        {
+            StopCoroutine("MoveModel");
+        }
+    }
+
     public void SwitchToDisplayCamera()
     {
         manager.playerControl = false;
@@ -32,6 +55,14 @@ public class Display : MonoBehaviour
         //Debug.Log(currentCamera);
         //manager.Cameras[_id].enabled = true;
         //manager.Cameras[0].enabled = false;
+        
+    }
+
+    IEnumerator MoveModel()
+    {
+        model.transform.position += Vector3.up * speed * Time.deltaTime;
+
+        yield return new WaitForSeconds(2f);
     }
 
     /*public void GetID()
