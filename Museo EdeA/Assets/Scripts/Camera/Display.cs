@@ -28,12 +28,17 @@ public class Display : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.GetComponent<Teleportation>())
+        if(other.gameObject.GetComponent<Teleportation>() && manager.playerControl == false)
         {
             if(model.transform.position.y <= 5.05f)
             {
                 StartCoroutine("MoveModel");
             }
+        }
+
+        else
+        {
+            manager.currentCamera = manager.normalCamera;
         }
     }
 

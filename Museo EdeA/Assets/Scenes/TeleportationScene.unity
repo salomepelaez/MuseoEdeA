@@ -530,7 +530,7 @@ GameObject:
   - component: {fileID: 239854604}
   - component: {fileID: 239854603}
   m_Layer: 0
-  m_Name: CM vcam2
+  m_Name: CM vcam6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1155,7 +1155,7 @@ GameObject:
   - component: {fileID: 455383126}
   - component: {fileID: 455383125}
   m_Layer: 0
-  m_Name: CM vcam2
+  m_Name: CM vcam7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1384,7 +1384,7 @@ GameObject:
   - component: {fileID: 601060617}
   - component: {fileID: 601060616}
   m_Layer: 0
-  m_Name: Display2Collider
+  m_Name: Display6Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2285,10 +2285,16 @@ MonoBehaviour:
   - {fileID: 2037738326}
   - {fileID: 1080475250}
   - {fileID: 223626535}
+  - {fileID: 2086963298}
+  - {fileID: 239854601}
+  - {fileID: 455383123}
+  - {fileID: 1363078371}
   displayArray:
   - {fileID: 2008463881}
   - {fileID: 1599922521}
   playerControl: 0
+  id: 0
+  displayID: 0
 --- !u!4 &991079510
 Transform:
   m_ObjectHideFlags: 0
@@ -2434,7 +2440,7 @@ GameObject:
   - component: {fileID: 1080639216}
   - component: {fileID: 1080639215}
   m_Layer: 0
-  m_Name: Display3Collider
+  m_Name: Display8Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2470,7 +2476,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   _id: 3
   displayID: 0
-  model: {fileID: 0}
+  model: {fileID: 1503171437}
 --- !u!65 &1080639216
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3371,7 +3377,7 @@ GameObject:
   - component: {fileID: 1363078374}
   - component: {fileID: 1363078373}
   m_Layer: 0
-  m_Name: CM vcam3
+  m_Name: CM vcam8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4550,7 +4556,7 @@ GameObject:
   - component: {fileID: 1709834148}
   - component: {fileID: 1709834147}
   m_Layer: 0
-  m_Name: Display2Collider
+  m_Name: Display5Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5364,7 +5370,7 @@ GameObject:
   - component: {fileID: 1971529207}
   - component: {fileID: 1971529206}
   m_Layer: 0
-  m_Name: Display2Collider
+  m_Name: Display7Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5752,7 +5758,7 @@ GameObject:
   - component: {fileID: 2086963301}
   - component: {fileID: 2086963300}
   m_Layer: 0
-  m_Name: CM vcam2
+  m_Name: CM vcam5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
