@@ -6,18 +6,18 @@ public class Display : MonoBehaviour
 {
     public Manager manager;
 
-    public int _id; 
-    public int displayID;
-
+    public int displayID; 
+    
     public GameObject model;
 
     private float speed = 1f;
-
+    
     public void Start()
     {
         manager = Manager.Instance;
     }
 
+    
     public void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.GetComponent<Teleportation>() != null && manager.playerControl == true)
@@ -55,8 +55,8 @@ public class Display : MonoBehaviour
         manager.playerControl = false;
         manager.currentCamera = this.gameObject.transform.GetChild(0).gameObject;
         Debug.Log(manager.currentCamera);
-        displayID = _id;
-        Debug.Log("Display number " + displayID);
+       //manager.displayID = _id;
+        //Debug.Log("Display number " + displayID);
         //Debug.Log(currentCamera);
         //manager.Cameras[_id].enabled = true;
         //manager.Cameras[0].enabled = false;

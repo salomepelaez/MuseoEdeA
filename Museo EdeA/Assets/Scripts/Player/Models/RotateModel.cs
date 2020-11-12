@@ -6,6 +6,8 @@ public class RotateModel : MonoBehaviour
 {
     Manager manager;
 
+    public string id;
+
     float speed = 50f;
 
     void Start()

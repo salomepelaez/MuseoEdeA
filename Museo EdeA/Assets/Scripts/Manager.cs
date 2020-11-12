@@ -11,6 +11,9 @@ public class Manager : MonoBehaviour
 
     public GameObject[] Cameras;
     public GameObject[] displayArray;
+
+    Dictionary<int, GameObject> modelsDictionary = new Dictionary<int, GameObject>();
+
     //public Camera playerCamera, display1, display2;
 
     public bool playerControl;
