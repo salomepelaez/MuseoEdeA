@@ -6,18 +6,44 @@ public class Display : MonoBehaviour
 {
     public Manager manager;
 
-    public int displayID; 
+    public GameObject[] displayArray = new GameObject[7];
+
+    //public int displayID; 
     
     public GameObject model;
+    public GameObject d;
 
     private float speed = 1f;
     
+    Dictionary<string, GameObject> dic = new Dictionary<string, GameObject>();
+
+    public void Awake()
+    {
+        References();
+    }
+
     public void Start()
     {
         manager = Manager.Instance;
+
+        for (int i = 0; i <= 6; i++)
+        {
+            //p.transform.GetChild(i).GetChild(0).GetComponent<MeshRenderer>().material = materialsList[i];
+            d.transform.GetChild(i).GetChild(0).GetComponent<Manager>().displayID = dic[displayArray[i]];
+        }
     }
 
-    
+    public void References()
+    {
+        dic.Add("1", displayArray[1]);
+        dic.Add("2", displayArray[2]);
+        dic.Add("3", displayArray[3]);
+        dic.Add("4", displayArray[4]);
+        dic.Add("5", displayArray[5]);
+        dic.Add("6", displayArray[6]);
+        dic.Add("7", displayArray[7]);
+    }
+
     public void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.GetComponent<Teleportation>() != null && manager.playerControl == true)
