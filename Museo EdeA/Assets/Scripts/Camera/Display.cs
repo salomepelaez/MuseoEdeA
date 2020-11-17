@@ -6,42 +6,14 @@ public class Display : MonoBehaviour
 {
     public Manager manager;
 
-    public GameObject[] displayArray = new GameObject[7];
-
-    //public int displayID; 
+    public int displayID; 
     
-    public GameObject model;
-    public GameObject d;
-
-    private float speed = 1f;
+    private float _speed = 1f;
     
-    Dictionary<string, GameObject> dic = new Dictionary<string, GameObject>();
-
-    public void Awake()
-    {
-        References();
-    }
-
     public void Start()
     {
         manager = Manager.Instance;
-
-        for (int i = 0; i <= 6; i++)
-        {
-            //p.transform.GetChild(i).GetChild(0).GetComponent<MeshRenderer>().material = materialsList[i];
-            d.transform.GetChild(i).GetChild(0).GetComponent<Manager>().displayID = dic[displayArray[i]];
-        }
-    }
-
-    public void References()
-    {
-        dic.Add("1", displayArray[1]);
-        dic.Add("2", displayArray[2]);
-        dic.Add("3", displayArray[3]);
-        dic.Add("4", displayArray[4]);
-        dic.Add("5", displayArray[5]);
-        dic.Add("6", displayArray[6]);
-        dic.Add("7", displayArray[7]);
+        manager.model = null;
     }
 
     public void OnTriggerEnter(Collider other)
@@ -56,7 +28,7 @@ public class Display : MonoBehaviour
     {
         if(other.gameObject.GetComponent<Teleportation>() && manager.playerControl == false)
         {
-            if(model.transform.position.y <= 5.05f)
+            if(manager.model != null && manager.model.transform.position.y <= 5.05f)
             {
                 StartCoroutine("MoveModel");
             }
@@ -73,6 +45,7 @@ public class Display : MonoBehaviour
         if(other.gameObject.GetComponent<Teleportation>() != null)
         {
             StopCoroutine("MoveModel");
+            manager.model = null;
         }
     }
 
@@ -80,7 +53,8 @@ public class Display : MonoBehaviour
     {
         manager.playerControl = false;
         manager.currentCamera = this.gameObject.transform.GetChild(0).gameObject;
-        Debug.Log(manager.currentCamera);
+        manager.model = manager.displayArray[this.displayID];
+        Debug.Log(manager.model);
        //manager.displayID = _id;
         //Debug.Log("Display number " + displayID);
         //Debug.Log(currentCamera);
@@ -91,7 +65,7 @@ public class Display : MonoBehaviour
 
     IEnumerator MoveModel()
     {
-        model.transform.position += Vector3.up * speed * Time.deltaTime;
+        manager.model.transform.position += Vector3.up * _speed * Time.deltaTime;
 
         yield return new WaitForSeconds(2f);
     }

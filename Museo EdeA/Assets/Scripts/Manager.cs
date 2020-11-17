@@ -10,13 +10,14 @@ public class Manager : MonoBehaviour
     public GameObject currentCamera;
 
     public GameObject[] Cameras;
-    //public GameObject[] displayArray = new GameObject[7];
+    public GameObject[] displayArray = new GameObject[7];
 
-
+    public GameObject model;
+    
     public bool playerControl;
 
     //public int id;
-    public int displayID;
+    //public int displayID;
 
     private int selectedCameraIndex;
     
