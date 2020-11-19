@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Manager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Manager : MonoBehaviour
 
     public GameObject normalCamera;
     public GameObject currentCamera;
+    public GameObject mouseSprite;
 
     public GameObject[] Cameras;
     public GameObject[] displayArray = new GameObject[7];
@@ -15,6 +17,9 @@ public class Manager : MonoBehaviour
     public GameObject model;
     
     public bool playerControl;
+
+    public TextMeshProUGUI displayText;
+    public string[] textArray = new string[0];
 
     //public int id;
     //public int displayID;
@@ -31,13 +36,7 @@ public class Manager : MonoBehaviour
         playerControl = true;
         currentCamera = normalCamera;
 
-        /*for( int i = 0 ; i < Cameras.Length ; i++ )
-        {
-            id++;
-            displayID++;
-        }*/
-        
-        DisableCameras();
+        DisableCameras();       
     }
 
     public void DisableCameras()

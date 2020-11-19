@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Display : MonoBehaviour
 {
     public Manager manager;
 
     public int displayID; 
-    
+
     private float _speed = 1f;
     
     public void Start()
@@ -46,6 +47,7 @@ public class Display : MonoBehaviour
         {
             StopCoroutine("MoveModel");
             manager.model = null;
+            manager.displayText.text = "";
         }
     }
 
@@ -55,11 +57,7 @@ public class Display : MonoBehaviour
         manager.currentCamera = this.gameObject.transform.GetChild(0).gameObject;
         manager.model = manager.displayArray[this.displayID];
         Debug.Log(manager.model);
-       //manager.displayID = _id;
-        //Debug.Log("Display number " + displayID);
-        //Debug.Log(currentCamera);
-        //manager.Cameras[_id].enabled = true;
-        //manager.Cameras[0].enabled = false;
+        manager.displayText.text = manager.textArray[this.displayID];
         
     }
 
