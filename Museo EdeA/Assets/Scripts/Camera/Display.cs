@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Display : MonoBehaviour
 {
@@ -45,9 +46,13 @@ public class Display : MonoBehaviour
     {
         if(other.gameObject.GetComponent<Teleportation>() != null)
         {
+            manager.model.transform.position = manager.startPos;
+            manager.model.transform.rotation = Quaternion.Euler(0, 0, 0);
             StopCoroutine("MoveModel");
+            
             manager.model = null;
-            manager.displayText.text = "";
+            manager.infoImage = null;
+            manager.displayText.text = "";            
         }
     }
 
@@ -56,9 +61,13 @@ public class Display : MonoBehaviour
         manager.playerControl = false;
         manager.currentCamera = this.gameObject.transform.GetChild(0).gameObject;
         manager.model = manager.displayArray[this.displayID];
+        manager.startPos = manager.model.transform.position;
+        Debug.Log(manager.startPos);
         Debug.Log(manager.model);
+
+        manager.displayPanel.SetActive(true);
         manager.displayText.text = manager.textArray[this.displayID];
-        
+        manager.infoImage.GetComponent<Image>().sprite = manager.displayImages[this.displayID];        
     }
 
     IEnumerator MoveModel()
@@ -68,38 +77,9 @@ public class Display : MonoBehaviour
         yield return new WaitForSeconds(2f);
     }
 
-    /*public void GetID()
+    public void Info()
     {
-        Cameras c;
-
-        switch(c)
-        {
-            case c.Main:
-            Debug.Log("a");
-            break;
-
-            case c.WallDisplay:
-            Debug.Log("b");
-            break;
-
-            case c.SphereDisplay:
-            _id = 2;
-            manager.Cameras[2].gameObject.SetActive(true);
-            break;
-
-            case c.HexagonDisplay:
-            _id = 2;
-            manager.Cameras[2].gameObject.SetActive(true);
-            break;
-
-        }
+        manager.infoPannel.SetActive(true);
+        manager.displayImage.GetComponent<Image>().sprite = manager.infoArray[this.displayID];
     }
-
-    public enum Cameras
-    {
-        Main,
-        WallDisplay,
-        SphereDisplay,
-        HexagonDisplay
-    }*/
 }

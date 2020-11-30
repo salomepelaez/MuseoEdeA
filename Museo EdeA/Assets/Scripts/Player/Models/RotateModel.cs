@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RotateModel : Display
 {
+
     float speed = 50f;
 
     void Update()
