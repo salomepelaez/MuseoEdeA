@@ -8,6 +8,15 @@ public class Manager : MonoBehaviour
 {
     public static Manager Instance;
 
+    public enum Platform
+    {
+        Editor,
+        Windows,
+        AndroidMobile
+    }
+
+    public Platform currentPlatform;
+
     public Display display;
 
     public GameObject normalCamera;
@@ -32,6 +41,7 @@ public class Manager : MonoBehaviour
     
     public bool playerControl;
 
+    public Text ensayo;
     public TextMeshProUGUI displayText;
     public string[] textArray = new string[0];
 
@@ -51,6 +61,27 @@ public class Manager : MonoBehaviour
         displayPanel.SetActive(false);
 
         DisableCameras();       
+    }
+
+    public void PlatformInitializer()
+    {
+        if(Application.platform == RuntimePlatform.WindowsEditor)
+        {
+            currentPlatform = Platform.Editor;
+            ensayo.text = "Editor";
+        }
+
+        if(Application.platform == RuntimePlatform.WindowsPlayer)
+        {
+            currentPlatform = Platform.Windows;
+            ensayo.text = "Windows";
+        }
+
+        if(Application.platform == RuntimePlatform.Android)
+        {
+            currentPlatform = Platform.AndroidMobile;
+            ensayo.text = "Android";
+        }
     }
 
     public void DisableCameras()
