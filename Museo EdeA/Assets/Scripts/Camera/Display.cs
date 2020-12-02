@@ -67,7 +67,8 @@ public class Display : MonoBehaviour
 
         manager.displayPanel.SetActive(true);
         manager.displayText.text = manager.textArray[this.displayID];
-        manager.infoImage.GetComponent<Image>().sprite = manager.displayImages[this.displayID];        
+        manager.infoImage.GetComponent<Image>().sprite = manager.displayImages[this.displayID];   
+        manager.displayImage.GetComponent<Image>().sprite = manager.infoArray[this.displayID];
     }
 
     IEnumerator MoveModel()
@@ -80,6 +81,5 @@ public class Display : MonoBehaviour
     public void Info()
     {
         manager.infoPannel.SetActive(true);
-        manager.displayImage.GetComponent<Image>().sprite = manager.infoArray[this.displayID];
     }
 }
