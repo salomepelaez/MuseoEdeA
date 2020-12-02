@@ -20,7 +20,7 @@ public class Display : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.GetComponent<Teleportation>() != null && manager.playerControl == true)
+        if(other.gameObject.GetComponent<Teleportation>() != null && manager.currentState == Manager.State.Walking)
         {
             SwitchToDisplayCamera();
         }
@@ -28,7 +28,7 @@ public class Display : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.GetComponent<Teleportation>() && manager.playerControl == false)
+        if(other.gameObject.GetComponent<Teleportation>() && manager.currentState == Manager.State.Watching)
         {
             if(manager.model != null && manager.model.transform.position.y <= 5.05f)
             {
@@ -52,13 +52,14 @@ public class Display : MonoBehaviour
             
             manager.model = null;
             manager.infoImage = null;
+            manager.displayImage = null;
             manager.displayText.text = "";            
         }
     }
 
     public void SwitchToDisplayCamera()
     {
-        manager.playerControl = false;
+        manager.currentState = Manager.State.Watching;
         manager.currentCamera = this.gameObject.transform.GetChild(0).gameObject;
         manager.model = manager.displayArray[this.displayID];
         manager.startPos = manager.model.transform.position;
@@ -80,6 +81,8 @@ public class Display : MonoBehaviour
 
     public void Info()
     {
+        manager.currentState = Manager.State.Reading;
+        manager.displayPanel.SetActive(false);
         manager.infoPannel.SetActive(true);
     }
 }

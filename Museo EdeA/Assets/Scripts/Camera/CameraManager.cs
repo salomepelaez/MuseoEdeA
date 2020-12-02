@@ -14,15 +14,18 @@ public class CameraManager : Display
     
     public void ChangePlayerCamera()
     {
-        //displayCamera = manager.currentCamera;
-        if(manager.playerControl == false)
+        if(manager.currentState == Manager.State.Watching)
         {
-            //manager.normalCamera.SetActive(false);
             goBackPanel.SetActive(true);
             BlendCameras();
         }
 
-        else if(manager.playerControl == true)
+        else if(manager.currentState == Manager.State.Reading)
+        {
+            goBackPanel.SetActive(false);
+        }
+
+        else if(manager.currentState == Manager.State.Walking)
         {
             goBackPanel.SetActive(false);
             manager.currentCamera = manager.normalCamera;

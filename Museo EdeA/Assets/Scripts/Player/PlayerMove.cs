@@ -16,7 +16,7 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {        
-        if(manager.playerControl == true)
+        if(manager.currentState == Manager.State.Walking)
         {
             Move();
         } 

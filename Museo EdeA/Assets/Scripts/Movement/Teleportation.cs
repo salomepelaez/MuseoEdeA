@@ -20,7 +20,7 @@ public class Teleportation : MonoBehaviour
     
     void Update()
     {
-        if(manager.playerControl == true)
+        if(manager.currentState == Manager.State.Walking)
         {
             ClickToMove();
         }

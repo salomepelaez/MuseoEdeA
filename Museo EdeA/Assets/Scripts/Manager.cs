@@ -15,7 +15,15 @@ public class Manager : MonoBehaviour
         AndroidMobile
     }
 
+    public enum State
+    {
+        Walking,
+        Watching,
+        Reading
+    }
+
     public Platform currentPlatform;
+    public State currentState;
 
     public Display display;
 
@@ -39,8 +47,6 @@ public class Manager : MonoBehaviour
 
     public Vector3 startPos;
     
-    public bool playerControl;
-
     public Text ensayo;
     public TextMeshProUGUI displayText;
     public string[] textArray = new string[0];
@@ -55,7 +61,7 @@ public class Manager : MonoBehaviour
     public void Start()
     {
         display = GetComponent<Display>();
-        playerControl = true;
+        currentState = State.Walking;
         currentCamera = normalCamera;
 
         displayPanel.SetActive(false);
@@ -94,7 +100,7 @@ public class Manager : MonoBehaviour
 
     public void LeaveDisplay()
     {
-        playerControl = true;
+        currentState = State.Walking;
         DisableCameras();
         displayPanel.SetActive(false);
         infoPannel.SetActive(false);
@@ -103,5 +109,12 @@ public class Manager : MonoBehaviour
     public void MoreInfo()
     {
         display.Info();
+    }
+
+    public void CloseInfo()
+    {
+        currentState = Manager.State.Watching;
+        infoPannel.SetActive(false);
+        displayPanel.SetActive(true);
     }
 }
