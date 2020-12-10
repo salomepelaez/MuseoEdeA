@@ -7846,7 +7846,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 21300000, guid: 0b4e8b8518768ea4580a828963df3d3c, type: 3}
   - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: d352bc2368acac344baf991015763378, type: 3}
   - {fileID: 0}
   infoImage: {fileID: 495401182}
   displayImage: {fileID: 1054926644}

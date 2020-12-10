@@ -26,6 +26,7 @@ public class FirelightsBugs : MonoBehaviour
     {
         if(other.gameObject.GetComponent<Teleportation>() != null && manager.currentState == Manager.State.Walking)
         {
+            manager.model = manager.displayArray[9];
             fireflyButton.SetActive(true);
             manager.currentState = Manager.State.Watching;
             manager.displayPanel.SetActive(true);
@@ -45,12 +46,12 @@ public class FirelightsBugs : MonoBehaviour
 
     public void LightsManagement()
     {
-        if(isShinning)
+        if(isShinning == false)
         {
             TurnOffLights();
         }
 
-        if(!isShinning)
+        else if(!isShinning == true)
         {
             TurnOnLights();
         }
@@ -60,11 +61,13 @@ public class FirelightsBugs : MonoBehaviour
     {
         lights.SetActive(false);
         firelights.SetActive(true);
+        isShinning = true;
     }
 
     void TurnOnLights()
     {
         lights.SetActive(true);
         firelights.SetActive(false);
+        isShinning = false;
     }
 }
