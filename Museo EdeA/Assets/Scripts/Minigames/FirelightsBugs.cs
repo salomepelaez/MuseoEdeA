@@ -51,7 +51,7 @@ public class FirelightsBugs : MonoBehaviour
             TurnOffLights();
         }
 
-        else if(!isShinning == true)
+        else if(isShinning == true)
         {
             TurnOnLights();
         }
