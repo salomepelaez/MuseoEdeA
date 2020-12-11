@@ -9,6 +9,9 @@ public class RayCamera : MonoBehaviour
 
     Camera cam;
 
+    [SerializeField]
+    Transform ringPrefab;
+
     void Start()
     {
         cam = transform.GetComponent<Camera>();
@@ -31,6 +34,8 @@ public class RayCamera : MonoBehaviour
             DeformPlane deform = hit.transform.GetComponent<DeformPlane>();
 
             deform.DeformThisPlane(hit.point);
+
+            Instantiate(ringPrefab, new Vector3(hit.point.x, hit.point.y, hit.point.z + 0.3f), Quaternion.Euler(0,0,0));
         }
     }
 }
