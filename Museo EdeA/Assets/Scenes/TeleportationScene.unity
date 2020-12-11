@@ -232,7 +232,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d352bc2368acac344baf991015763378, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 547108c9f5aa59d41a4f2dbe1e7a4c89, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6633,6 +6633,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a88c5a11bf4f2c43857df4ad32f4501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireflyOn: {fileID: 21300000, guid: 547108c9f5aa59d41a4f2dbe1e7a4c89, type: 3}
+  fireflyOff: {fileID: 21300000, guid: ca0abe5327f43be408be5d365746cfd4, type: 3}
   firelights: {fileID: 1255340984}
   lights: {fileID: 1486982382}
   fireflyButton: {fileID: 24991246}

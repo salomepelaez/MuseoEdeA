@@ -8,6 +8,8 @@ public class FirelightsBugs : MonoBehaviour
 {
     Manager manager;
 
+    public Sprite fireflyOn, fireflyOff;
+
     public GameObject firelights;
     public GameObject lights;
     public GameObject fireflyButton;
@@ -59,6 +61,7 @@ public class FirelightsBugs : MonoBehaviour
 
     void TurnOffLights()
     {
+        fireflyButton.GetComponent<Image>().sprite = fireflyOff;
         lights.SetActive(false);
         firelights.SetActive(true);
         isShinning = true;
@@ -66,6 +69,7 @@ public class FirelightsBugs : MonoBehaviour
 
     void TurnOnLights()
     {
+        fireflyButton.GetComponent<Image>().sprite = fireflyOn;
         lights.SetActive(true);
         firelights.SetActive(false);
         isShinning = false;
