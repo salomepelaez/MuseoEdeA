@@ -35,7 +35,7 @@ public class RayCamera : MonoBehaviour
 
             deform.DeformThisPlane(hit.point);
 
-            Instantiate(ringPrefab, new Vector3(hit.point.x, hit.point.y, hit.point.z + 0.3f), Quaternion.Euler(0,0,0));
+            Instantiate(ringPrefab, new Vector3(hit.point.x, hit.point.y, hit.point.z + 0.11f), Quaternion.Euler(0,0,0));
         }
     }
 }
