@@ -2,13 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RingScript : MonoBehaviour
+public class RingScript : MonoBehaviour, IPooledObject
 {
+    public void OnObjectSpawn()
+    {
+        Debug.Log("wiii");
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "RingCollider")
         {
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
+
+            Transform[] allChildren = other.GetComponentsInChildren<Transform>();
+        
+            foreach (Transform child in allChildren)
+            {
+                child.gameObject.SetActive(false);
+            }  
         }
+
+              
     }
 }
