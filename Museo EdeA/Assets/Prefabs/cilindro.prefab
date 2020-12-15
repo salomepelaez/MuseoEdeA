@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1260987906}
   - component: {fileID: 1260987907}
+  - component: {fileID: 4723530017641811808}
+  - component: {fileID: 7043678983668078585}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -45,6 +47,34 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4723530017641811808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260987905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d51e2b4d9a005a49975b405443c52d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &7043678983668078585
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260987905}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2116132694676790418
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,9 +118,10 @@ GameObject:
   - component: {fileID: 3817106195580779458}
   - component: {fileID: 2014771111584595182}
   - component: {fileID: 6204353714522949766}
+  - component: {fileID: 6071111721414359798}
   m_Layer: 0
   m_Name: Cylinder
-  m_TagString: Untagged
+  m_TagString: RingCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,3 +187,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6071111721414359798
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3236678527737040022}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2534964839176971238, guid: ffbd7104148ae584792b041e0f9d988d, type: 3}

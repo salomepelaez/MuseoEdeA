@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DisplayCamera1
   - DisplayCamera2
+  - RingCollider
   layers:
   - Default
   - TransparentFX
