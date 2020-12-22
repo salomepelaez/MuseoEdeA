@@ -42,6 +42,8 @@ public class Manager : MonoBehaviour
     public Sprite[] displayImages = new Sprite[0];
     public Sprite[] infoArray = new Sprite[0];
 
+    public List<GameObject> butterfliesList = new List<GameObject>();
+
     public Image infoImage;
     public Image displayImage;
 
@@ -52,6 +54,7 @@ public class Manager : MonoBehaviour
     public string[] textArray = new string[0];
 
     private int selectedCameraIndex;
+    public int counter;
     
     public void Awake()
     {
@@ -116,5 +119,28 @@ public class Manager : MonoBehaviour
         currentState = Manager.State.Watching;
         infoPannel.SetActive(false);
         displayPanel.SetActive(true);
+    }
+
+    public bool CheckBugsLeft()
+    {
+        foreach (GameObject b in butterfliesList)         
+        {             
+            if (!b.activeInHierarchy)
+            {
+                counter--;
+                Debug.Log(counter);
+                //return false;
+            }
+        }
+        /*for (int i = 0; i < gameObject.transform.childCount; i++)
+        {
+            if(!gameObject.transform.GetChild(i).gameObject.activeInHierarchy)
+            {
+                return false;
+            }
+
+            Debug.Log(i);
+        }*/
+        return true;
     }
 }
