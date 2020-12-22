@@ -9,19 +9,14 @@ public class ButterflyHaunt : MonoBehaviour
 
     void Start()
     {
-        Initialize();
-    }
-
-    private void Initialize()
-    {
         int minGen = Random.Range(5, 15);
         Debug.Log(minGen);
 
-        for (int j = 0; j < minGen; j++) // Este For genera los objetos siguiendo los límites establecidos.
+        for (int i = 0; i < minGen; i++) // Este For genera los objetos siguiendo los límites establecidos.
         {
             Vector3 pos = new Vector3();
             butterflyPrefab = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            butterflyPrefab.AddComponent<Butterfly>();
+            //butterflyPrefab.AddComponent<Butterfly>();
             butterflyPrefab.GetComponent<Renderer>().material.color = Color.yellow;
 
             pos.x = Random.Range(-20, 40);

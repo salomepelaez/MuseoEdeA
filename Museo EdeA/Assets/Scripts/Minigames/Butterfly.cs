@@ -11,4 +11,3 @@ public class Butterfly : ButterflyHaunt
         this.gameObject.SetActive(false);
     }
 }
-
