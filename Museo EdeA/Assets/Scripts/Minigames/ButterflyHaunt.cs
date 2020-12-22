@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ButterflyHaunt : MonoBehaviour
 {
+    public List<GameObject> butterfliesList = new List<GameObject>();
     public GameObject butterflyPrefab;
 
     void Start()
@@ -26,6 +27,7 @@ public class ButterflyHaunt : MonoBehaviour
         {
             Vector3 pos = new Vector3();
             butterflyPrefab = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            butterflyPrefab.AddComponent<Butterfly>();
             butterflyPrefab.GetComponent<Renderer>().material.color = Color.yellow;
 
             pos.x = Random.Range(-20, 40);
