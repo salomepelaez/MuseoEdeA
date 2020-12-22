@@ -120,27 +120,4 @@ public class Manager : MonoBehaviour
         infoPannel.SetActive(false);
         displayPanel.SetActive(true);
     }
-
-    public bool CheckBugsLeft()
-    {
-        foreach (GameObject b in butterfliesList)         
-        {             
-            if (!b.activeInHierarchy)
-            {
-                counter--;
-                Debug.Log(counter);
-                //return false;
-            }
-        }
-        /*for (int i = 0; i < gameObject.transform.childCount; i++)
-        {
-            if(!gameObject.transform.GetChild(i).gameObject.activeInHierarchy)
-            {
-                return false;
-            }
-
-            Debug.Log(i);
-        }*/
-        return true;
-    }
 }

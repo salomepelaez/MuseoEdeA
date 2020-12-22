@@ -16,9 +16,10 @@ public class Butterfly : MonoBehaviour
         Debug.Log(":D");
         this.gameObject.SetActive(false);
 
-        bool isDone = manager.CheckBugsLeft();
+        manager.counter = manager.counter - 1;
+        Debug.Log(manager.counter);
 
-        if(isDone == false)
+        if(manager.counter == 0)
         {
             Debug.Log(":(");
         }
