@@ -12,12 +12,6 @@ public class ButterflyHaunt : MonoBehaviour
         Initialize();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void Initialize()
     {
         int minGen = Random.Range(5, 15);

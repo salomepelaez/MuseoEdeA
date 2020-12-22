@@ -8014,6 +8014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1be6e86eafc92ba4ab4568df8e0f1a84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  butterfliesList: []
   butterflyPrefab: {fileID: 0}
 --- !u!1 &1054926642
 GameObject:
