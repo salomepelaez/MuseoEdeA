@@ -11,8 +11,6 @@ public class ButterfliesGame : MonoBehaviour
     //public GameObject butterflies;
     public GameObject butterfliesButton;
 
-    bool isShinning = false;
-
     void Start()
     {
         manager = Manager.Instance;
