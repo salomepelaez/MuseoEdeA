@@ -4,15 +4,51 @@ using UnityEngine;
 
 public class Cockroach : MonoBehaviour
 {
-    // Start is called before the first frame update
+    Transform target;
+
+    Vector3 direction;
+
+    float npcSpeed = 5f;
+    float rotationSpeed = 3f;
+    float attackRange;
+
     void Start()
     {
-        
+        target = FindObjectOfType<Player>().GetComponent<Transform>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        NPCMove();
+    }
+
+    public void NPCMove()
+    {
+        attackRange = Vector3.Distance(target.position, transform.position);
+
+        if (attackRange < 5.0f)
+        {
+            direction = Vector3.Normalize(target.transform.position - transform.position);
+            transform.position += direction * npcSpeed * Time.deltaTime;
+        }      
+
+        else
+        {
+            NPCAssignment();
+        }          
+    }
+
+    public void NPCAssignment()
+    {
+        switch (Random.Range(0, 2))
+        {
+            case 0:
+                transform.position += transform.forward * npcSpeed * Time.deltaTime;
+                break;
+
+            case 1:
+                transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);;
+                break;
+        }
     }
 }
