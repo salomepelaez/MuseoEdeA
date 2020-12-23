@@ -363,9 +363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
-  _id: 1
   displayID: 0
-  model: {fileID: 4957377508439638934}
 --- !u!1001 &3811663566734650117
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -443,12 +441,6 @@ PrefabInstance:
 --- !u!4 &1551534104561099139 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2408748353669089926, guid: 356e3af3599110c4792001b9086824c6,
-    type: 3}
-  m_PrefabInstance: {fileID: 3811663566734650117}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4957377508439638934 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8082161729138206867, guid: 356e3af3599110c4792001b9086824c6,
     type: 3}
   m_PrefabInstance: {fileID: 3811663566734650117}
   m_PrefabAsset: {fileID: 0}
