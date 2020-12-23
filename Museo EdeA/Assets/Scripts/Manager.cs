@@ -25,6 +25,8 @@ public class Manager : MonoBehaviour
     public Platform currentPlatform;
     public State currentState;
 
+    public Transform player;
+
     public Display display;
 
     public GameObject normalCamera;
