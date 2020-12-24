@@ -47,8 +47,16 @@ public class Cockroach : MonoBehaviour
                 break;
 
             case 1:
-                transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);;
+                transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
                 break;
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.transform.tag == "Borde")
+        {
+            transform.rotation = Quaternion.Euler(0.0f, 180f, 0.0f);
         }
     }
 }

@@ -64,6 +64,11 @@ public class Creator : MonoBehaviour
         GameObject c = GameObject.CreatePrimitive(PrimitiveType.Cube);
         Vector3 pos = parent.transform.position;
         c.AddComponent<Cockroach>();
+  //      c.AddComponent<Rigidbody>();
+//        c.GetComponent<Rigidbody>().freezeRotation = true;
+
+        //c.GetComponent<Rigidbody>().useGravity = false;
+        //c.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationY;
         c.transform.SetParent(parent);
         c.transform.position = pos; 
     }
