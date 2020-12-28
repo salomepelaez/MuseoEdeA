@@ -52,11 +52,12 @@ public class Cockroach : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        if(collision.transform.tag == "Borde")
+        if(other.transform.tag == "Borde")
         {
-            transform.rotation = Quaternion.Euler(0.0f, 180f, 0.0f);
+            transform.position -= transform.forward * npcSpeed * Time.deltaTime;
+            Debug.Log("test");
         }
     }
 }

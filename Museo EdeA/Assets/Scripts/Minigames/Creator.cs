@@ -6,6 +6,8 @@ public class Creator : MonoBehaviour
 {
     Manager manager;
 
+    public GameObject enemy;
+
     Transform parent;
 
     int index;
@@ -61,7 +63,7 @@ public class Creator : MonoBehaviour
         currentIndex = currentIndex + index;
         Debug.Log(currentIndex);
 
-        GameObject c = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        GameObject c = Instantiate(enemy, Vector3.zero, Quaternion.identity);
         Vector3 pos = parent.transform.position;
         c.AddComponent<Cockroach>();
   //      c.AddComponent<Rigidbody>();
