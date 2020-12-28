@@ -7,7 +7,9 @@ public class Cockroach : MonoBehaviour
     Transform target;
 
     Vector3 direction;
+    Vector3 targetAngles;
 
+    public float smooth = 1f;
     float npcSpeed = 5f;
     float rotationSpeed = 3f;
     float attackRange;
@@ -52,11 +54,12 @@ public class Cockroach : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         if(other.transform.tag == "Borde")
         {
-            transform.position -= transform.forward * npcSpeed * Time.deltaTime;
+            targetAngles = transform.eulerAngles + 180f * Vector3.up;
+            transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, targetAngles, smooth * Time.deltaTime);
             Debug.Log("test");
         }
     }
