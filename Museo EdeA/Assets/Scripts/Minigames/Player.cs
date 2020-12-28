@@ -13,37 +13,36 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        Move();        
+        Move();   
+        LimitateAxis();     
     }
 
     private void Move() // Se creó una función para el movimiento, que luego es llamada en el Update.
     {
         direction = joystick.Direction * speed * Time.deltaTime;
         transform.position += new Vector3(direction.x, 0, direction.y);
-        /*
-        //El siguiente bloque de código, es el encargado de obtener de obtener las teclas que el jugador presiona, 
-        y transformar la ubicación dependiendo de la dirección que se le haya asignado
-        if (Input.GetKey(KeyCode.W))
+    }
+
+    private void LimitateAxis()
+    {
+        if(gameObject.transform.position.z >= 6f)
         {
-            transform.position += transform.forward * speed; // A la tecla W se le asignó la dirección que mueve hacia adelante.
+            transform.position = new Vector3(transform.position.x, 2.16f, 6f);
         }
 
-        if (Input.GetKey(KeyCode.S))
+        if(gameObject.transform.position.z <= -7f)
         {
-            transform.position -= transform.forward * speed; /* Puesto que no hay una opción que devuelva, es necesario utilizar 
-            el transform.foward pero con un signo negativo, el cual se encarga de enviar en la dirección contraria
+            transform.position = new Vector3(transform.position.x, 2.16f, -7f);
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if(gameObject.transform.position.x >= 7f)
         {
-            transform.position += transform.right * speed; // La tecla D, permite el movimiento hacia la derecha.
+            transform.position = new Vector3(7f, 2.16f, transform.position.z);
         }
 
-        if (Input.GetKey(KeyCode.A))
+        if(gameObject.transform.position.x <= -6f)
         {
-            transform.position -= transform.right * speed; //Como sucede con la tecla S, no hay una opción que permita ir hacia la izquierda, por lo que es necesario
-            utilizar un signo negativo para ir hacia la dirección contraria
+            transform.position = new Vector3(-6f, 2.16f, transform.position.z);
         }
-        */
     }
 }

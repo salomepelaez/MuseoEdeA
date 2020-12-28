@@ -60,7 +60,6 @@ public class Cockroach : MonoBehaviour
         {
             targetAngles = transform.eulerAngles + 180f * Vector3.up;
             transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, targetAngles, smooth * Time.deltaTime);
-            Debug.Log("test");
         }
     }
 }
