@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     private void Move() // Se creó una función para el movimiento, que luego es llamada en el Update.
     {
         direction = joystick.Direction * speed * Time.deltaTime;
-        transform.position += new Vector3(direction.x, 0, direction.z);
+        transform.position += new Vector3(direction.x, 0, direction.y);
         /*
         //El siguiente bloque de código, es el encargado de obtener de obtener las teclas que el jugador presiona, 
         y transformar la ubicación dependiendo de la dirección que se le haya asignado
