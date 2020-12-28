@@ -17,20 +17,18 @@ public class CockroachManager : MonoBehaviour
     private int seconds;
     private int minutes;
 
-    private float timer;
+    private float timer = 0;
 
     private string timerString;
 
     public void Awake()
     {
         Instance = this;
-        timer = 0f;
     }
 
     void Start()
     {
         pointsCounter = 0;
-        InvokeRepeating("TimerCounter", 0f, 1f);
         InvokeRepeating("InstantiateFood", 1f, Random.Range(3, 10));
 
         Debug.Log(timer);
@@ -38,12 +36,13 @@ public class CockroachManager : MonoBehaviour
 
     void Update()
     {
+        TimerCounter();
         counterText.text = "Puntuación: " + pointsCounter;
     }
 
     void TimerCounter()
     {
-        timer = timer + Time.deltaTime;  
+        timer += Time.deltaTime;;  
         seconds = (int)(timer % 60);
         minutes = (int)(timer / 60) % 60;
 
