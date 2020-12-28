@@ -28,7 +28,7 @@ public class Cockroach : MonoBehaviour
     {
         attackRange = Vector3.Distance(target.position, transform.position);
 
-        if (attackRange < 5.0f)
+        if (attackRange < 3.0f)
         {
             direction = Vector3.Normalize(target.transform.position - transform.position);
             transform.position += direction * npcSpeed * Time.deltaTime;
