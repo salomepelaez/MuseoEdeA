@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ModelAssigment : MonoBehaviour
 {
-    Manager manager;
-    
+    public Manager manager;
+
     public int displayID; 
 
     private float _speed = 1f;
@@ -18,7 +18,7 @@ public class ModelAssigment : MonoBehaviour
 
    public void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.GetComponent<Teleportation>() != null && manager.currentState == Manager.State.Walking)
+        if(other.gameObject.GetComponent<Teleportation>() != null)
         {
             SwitchToDisplayCamera();
         }
@@ -26,17 +26,12 @@ public class ModelAssigment : MonoBehaviour
 
     public void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.GetComponent<Teleportation>() && manager.currentState == Manager.State.Watching)
+        if(other.gameObject.GetComponent<Teleportation>())
         {
             if(manager.model != null && manager.model.transform.position.y <= 5.05f)
             {
                 StartCoroutine("MoveModel");
             }
-        }
-
-        else
-        {
-            manager.currentCamera = manager.normalCamera;
         }
     }
 

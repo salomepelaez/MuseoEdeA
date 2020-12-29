@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RotateModel : Display
+public class RotateModel : ModelAssigment
 {
     float speed = 50f;
 
