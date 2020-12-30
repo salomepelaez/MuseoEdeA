@@ -7,6 +7,11 @@ public class Cricket : MonoBehaviour
 {
     CricketManager manager;
 
+    public Joystick joystick;
+
+    private float direction;
+    private float speed = 3.0f;
+
     private Rigidbody2D rb;
 
     private Animator anim;
@@ -25,10 +30,19 @@ public class Cricket : MonoBehaviour
 
     void Update()
     {
-        if(Input.touchCount > 0)
+        direction = joystick.Horizontal * speed * Time.deltaTime;
+        transform.position += new Vector3(direction, 0f, 0f);
+
+        if(direction < 0.01f)
         {
-            Touch touch = Input.GetTouch(0);
+            transform.localScale= new Vector2(0.6f, 0.6f);
         }
+
+        else if(direction > -0.01f)
+        {
+            transform.localScale= new Vector2(-0.6f, 0.6f);
+            }
+
     }
 
     void OnCollisionEnter2D(Collision2D collision)
