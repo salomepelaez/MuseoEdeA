@@ -28,9 +28,9 @@ public class Food : MonoBehaviour
 
     IEnumerator DestroyFood()
     {
-        anim.SetBool("iddle", false);
+        this.anim.SetBool("iddle", false);
 
-        anim.SetBool("eaten", true);
+        this.anim.SetBool("eaten", true);
 
         yield return new WaitForSeconds(1.5f);
 
