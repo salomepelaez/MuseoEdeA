@@ -8005,7 +8005,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.9433962, g: 0.8826904, b: 0.52954787, a: 1}
-  m_Intensity: 2
+  m_Intensity: 2.06
   m_Range: 50
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -8601,7 +8601,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.9433962, g: 0.8826904, b: 0.52954787, a: 1}
-  m_Intensity: 2
+  m_Intensity: 2.06
   m_Range: 50
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -10758,7 +10758,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.9433962, g: 0.8826904, b: 0.52954787, a: 1}
-  m_Intensity: 2
+  m_Intensity: 2.06
   m_Range: 50
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -10928,7 +10928,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1080639214}
   - component: {fileID: 1080639218}
-  - component: {fileID: 1080639217}
   - component: {fileID: 1080639216}
   - component: {fileID: 1080639215}
   - component: {fileID: 1080639219}
@@ -10981,45 +10980,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1042527, y: 1, z: 1.2119243}
   m_Center: {x: 0.116664924, y: 0, z: 0.1998745}
---- !u!23 &1080639217
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1080639213}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!33 &1080639218
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -16733,7 +16693,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.9433962, g: 0.8826904, b: 0.52954787, a: 1}
-  m_Intensity: 2
+  m_Intensity: 2.06
   m_Range: 50
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -18011,7 +17971,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.52
+  m_Intensity: 2.06
   m_Range: 9.1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -18835,7 +18795,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.9433962, g: 0.8826904, b: 0.52954787, a: 1}
-  m_Intensity: 2
+  m_Intensity: 2.06
   m_Range: 50
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -19418,7 +19378,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.52
+  m_Intensity: 2.06
   m_Range: 9.1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -19637,7 +19597,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.52
+  m_Intensity: 2.06
   m_Range: 9.1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -20783,7 +20743,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.9433962, g: 0.8826904, b: 0.52954787, a: 1}
-  m_Intensity: 2
+  m_Intensity: 2.06
   m_Range: 50
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -21291,7 +21251,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.9433962, g: 0.8826904, b: 0.52954787, a: 1}
-  m_Intensity: 2
+  m_Intensity: 2.06
   m_Range: 50
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -21376,7 +21336,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.52
+  m_Intensity: 2.06
   m_Range: 9.1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -24212,7 +24172,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.52
+  m_Intensity: 2.06
   m_Range: 9.1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -24689,7 +24649,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.9433962, g: 0.8826904, b: 0.52954787, a: 1}
-  m_Intensity: 2
+  m_Intensity: 2.06
   m_Range: 50
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -25804,7 +25764,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.52
+  m_Intensity: 2.06
   m_Range: 9.1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -26095,7 +26055,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.9433962, g: 0.8826904, b: 0.52954787, a: 1}
-  m_Intensity: 2
+  m_Intensity: 2.06
   m_Range: 50
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -26988,7 +26948,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.52
+  m_Intensity: 2.06
   m_Range: 9.1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208

@@ -25,17 +25,15 @@ public class Display : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.GetComponent<Teleportation>() != null)
-        {
-            manager.infoImage = null;
-            manager.displayImage = null;  
-            manager.model = null;        
-        }
+        manager.infoImage.GetComponent<Image>().sprite = null;   
+        manager.displayImage.GetComponent<Image>().sprite = null; 
+
+        manager.currentState = Manager.State.Walking;
     }
 
     public void SwitchToDisplayCamera()
     {
-        manager.model = manager.displayArray[this.displayID];
+        //manager.model = manager.displayArray[this.displayID];
         manager.currentState = Manager.State.Watching;
         manager.currentCamera = this.gameObject.transform.GetChild(0).gameObject;
 

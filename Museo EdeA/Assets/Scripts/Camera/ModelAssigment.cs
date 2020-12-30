@@ -48,7 +48,8 @@ public class ModelAssigment : MonoBehaviour
     }
 
     public void SwitchToDisplayCamera()
-    {        
+    {     
+        manager.model = manager.displayArray[this.displayID];  
         manager.startPos = manager.model.transform.position;
         Debug.Log(manager.startPos);
         Debug.Log(manager.model);
