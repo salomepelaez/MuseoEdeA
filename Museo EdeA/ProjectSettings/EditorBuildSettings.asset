@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TeleportationScene.unity
     guid: acb75837eb967e94cb453488e2388b6e
+  - enabled: 1
+    path: Assets/Scenes/Minigames/Survival.unity
+    guid: e8fd4b1406aac8543bc0176231f70b4f
   m_configObjects: {}

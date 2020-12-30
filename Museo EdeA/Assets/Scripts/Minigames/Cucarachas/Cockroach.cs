@@ -30,7 +30,7 @@ public class Cockroach : MonoBehaviour
 
     void Update()
     {
-        if(currentState == State.Moving)
+        if(currentState == State.Moving && manager.inGame == true)
             NPCMove();
     }
 
@@ -73,7 +73,11 @@ public class Cockroach : MonoBehaviour
             currentState = State.Attacking;
             manager.life = manager.life - 1;
             StartCoroutine("MadeDamage");
-            Debug.Log(manager.life);
+            
+            if(manager.life == 0)
+            {
+                manager.dead = true;
+            }
         }
     }
 

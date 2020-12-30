@@ -19,8 +19,11 @@ public class Player : MonoBehaviour
     
     void Update()
     {   
-        Move();   
-        LimitateAxis();     
+        if(manager.inGame == true)
+        {
+            Move();   
+            LimitateAxis();
+        }     
     }
 
     private void Move() // Se creó una función para el movimiento, que luego es llamada en el Update.

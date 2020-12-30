@@ -17,22 +17,26 @@ public class Food : MonoBehaviour
         anim.SetBool("iddle", true);
     }
 
+    void Update()
+    {
+        //anim.SetBool("iddle", true);
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.GetComponent<Player>() != null)
         {
             manager.pointsCounter = manager.pointsCounter + foodValue;
+            this.anim.SetBool("iddle", false);
             StartCoroutine("DestroyFood");
         }
     }
 
     IEnumerator DestroyFood()
     {
-        this.anim.SetBool("iddle", false);
-
         this.anim.SetBool("eaten", true);
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
 
         this.gameObject.SetActive(false);
     }
