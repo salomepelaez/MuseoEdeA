@@ -8,9 +8,13 @@ public class Food : MonoBehaviour
 
     private int foodValue = 5;
 
+    private Animator anim;
+
     void Start()
     {
         manager = CockroachManager.Instance;
+        anim = GetComponent<Animator>();
+        anim.SetBool("iddle", true);
     }
 
     void OnTriggerEnter(Collider other)
@@ -18,7 +22,18 @@ public class Food : MonoBehaviour
         if(other.gameObject.GetComponent<Player>() != null)
         {
             manager.pointsCounter = manager.pointsCounter + foodValue;
-            this.gameObject.SetActive(false);
+            StartCoroutine("DestroyFood");
         }
+    }
+
+    IEnumerator DestroyFood()
+    {
+        anim.SetBool("iddle", false);
+
+        anim.SetBool("eaten", true);
+
+        yield return new WaitForSeconds(1.5f);
+
+        this.gameObject.SetActive(false);
     }
 }

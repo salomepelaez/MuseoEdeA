@@ -14,15 +14,18 @@ public class Cockroach : MonoBehaviour
     Vector3 targetAngles;
 
     public float smooth = 1f;
-    float npcSpeed = 5f;
+    float npcSpeed;
     float rotationSpeed = 3f;
     float attackRange;
 
     void Start()
     {
+        npcSpeed = 5f;
         manager = CockroachManager.Instance;
         target = FindObjectOfType<Player>().GetComponent<Transform>();
         currentState = State.Moving;
+
+        InvokeRepeating("IncreaseSpeed", 5f, 10f);
     }
 
     void Update()
@@ -92,6 +95,11 @@ public class Cockroach : MonoBehaviour
         yield return new WaitForSeconds(3f);
 
         currentState = State.Moving;
+    }
+
+    void IncreaseSpeed()
+    {
+        npcSpeed = npcSpeed + 2f;
     }
 
     public enum State
