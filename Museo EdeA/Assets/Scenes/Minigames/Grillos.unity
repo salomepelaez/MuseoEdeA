@@ -948,7 +948,7 @@ MonoBehaviour:
   numberOfPlatforms: 200
   levelWidth: 10
   minY: 3
-  maxY: 5
+  maxY: 4
 --- !u!1 &989996579 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5697743228816282594, guid: 087a867092c433b45bbe1e6cf0dda25f,
