@@ -32,7 +32,6 @@ public class FirelightsBugs : MonoBehaviour
             fireflyButton.SetActive(true);
             manager.currentState = Manager.State.Watching;
             manager.displayPanel.SetActive(true);
-            manager.displayText.text = manager.textArray[9];
             manager.infoImage.GetComponent<Image>().sprite = manager.displayImages[9];   
             manager.displayImage.GetComponent<Image>().sprite = manager.infoArray[9];
         }

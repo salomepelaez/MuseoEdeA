@@ -17,4 +17,9 @@ public class ScenesInitializer : MonoBehaviour
     {
         SceneManager.LoadScene("Survival");
     }
+
+    public void CricketGame()
+    {
+        SceneManager.LoadScene("Grillos");
+    }
 }

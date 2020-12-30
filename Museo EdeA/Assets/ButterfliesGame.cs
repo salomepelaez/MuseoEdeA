@@ -21,13 +21,10 @@ public class ButterfliesGame : MonoBehaviour
     {
         if(other.gameObject.GetComponent<Teleportation>() != null)
         {
-            Debug.Log(".");
-
             manager.model = manager.displayArray[0];
             butterfliesButton.SetActive(true);
             manager.currentState = Manager.State.Watching;
             manager.displayPanel.SetActive(true);
-            manager.displayText.text = manager.textArray[0];
             manager.infoImage.GetComponent<Image>().sprite = manager.displayImages[0];   
             manager.displayImage.GetComponent<Image>().sprite = manager.infoArray[0];
         }

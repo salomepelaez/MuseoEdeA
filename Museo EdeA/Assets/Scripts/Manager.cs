@@ -36,7 +36,8 @@ public class Manager : MonoBehaviour
     
     public GameObject mouseSprite;
     public GameObject displayPanel;
-    public GameObject infoPannel;    
+    public GameObject infoPannel; 
+    public GameObject tutorialImage;   
 
     public GameObject[] Cameras;
     public GameObject[] displayArray = new GameObject[7];
@@ -52,8 +53,6 @@ public class Manager : MonoBehaviour
     public Vector3 startPos;
     
     public Text ensayo;
-    public TextMeshProUGUI displayText;
-    public string[] textArray = new string[0];
 
     private int selectedCameraIndex;
     public int counter;
@@ -71,7 +70,9 @@ public class Manager : MonoBehaviour
 
         displayPanel.SetActive(false);
 
-        DisableCameras();       
+        DisableCameras();    
+
+        StartCoroutine("Tutorial");   
     }
 
     public void PlatformInitializer()
@@ -101,6 +102,15 @@ public class Manager : MonoBehaviour
             Cameras[i].SetActive(false);
 
         Cameras[0].SetActive(true);
+    }
+
+    IEnumerator Tutorial()
+    {
+        tutorialImage.SetActive(true);
+
+        yield return new WaitForSeconds(10f);
+
+        tutorialImage.SetActive(false);
     }
 
     public void LeaveDisplay()

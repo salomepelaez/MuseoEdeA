@@ -28,18 +28,18 @@ public class Display : MonoBehaviour
         if(other.gameObject.GetComponent<Teleportation>() != null)
         {
             manager.infoImage = null;
-            manager.displayImage = null;
-            manager.displayText.text = "";            
+            manager.displayImage = null;  
+            manager.model = null;        
         }
     }
 
     public void SwitchToDisplayCamera()
     {
+        manager.model = manager.displayArray[this.displayID];
         manager.currentState = Manager.State.Watching;
         manager.currentCamera = this.gameObject.transform.GetChild(0).gameObject;
 
         manager.displayPanel.SetActive(true);
-        manager.displayText.text = manager.textArray[this.displayID];
         manager.infoImage.GetComponent<Image>().sprite = manager.displayImages[this.displayID];   
         manager.displayImage.GetComponent<Image>().sprite = manager.infoArray[this.displayID];
     }
