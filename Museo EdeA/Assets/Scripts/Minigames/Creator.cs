@@ -63,7 +63,7 @@ public class Creator : MonoBehaviour
         currentIndex = currentIndex + index;
         Debug.Log(currentIndex);
 
-        GameObject c = Instantiate(enemy, Vector3.zero, Quaternion.identity);
+        GameObject c = Instantiate(enemy, new Vector3(transform.position.x, 2.93f, transform.position.z), Quaternion.identity);
         Vector3 pos = parent.transform.position;
         c.AddComponent<Cockroach>();
   //      c.AddComponent<Rigidbody>();

@@ -6,6 +6,8 @@ public class Cockroach : MonoBehaviour
 {
     CockroachManager manager;
 
+    public State currentState = State.None;
+
     Transform target;
 
     Vector3 direction;
@@ -20,11 +22,13 @@ public class Cockroach : MonoBehaviour
     {
         manager = CockroachManager.Instance;
         target = FindObjectOfType<Player>().GetComponent<Transform>();
+        currentState = State.Moving;
     }
 
     void Update()
     {
-        NPCMove();
+        if(currentState == State.Moving)
+            NPCMove();
     }
 
     public void NPCMove()
@@ -48,10 +52,12 @@ public class Cockroach : MonoBehaviour
         switch (Random.Range(0, 2))
         {
             case 0:
+                currentState = State.Moving;
                 transform.position += transform.forward * npcSpeed * Time.deltaTime;
                 break;
 
             case 1:
+                currentState = State.Moving;
                 transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
                 break;
         }
@@ -61,7 +67,10 @@ public class Cockroach : MonoBehaviour
     {
         if(other.gameObject.GetComponent<Player>() != null)
         {
-            Debug.Log("oui");
+            currentState = State.Attacking;
+            manager.life = manager.life - 1;
+            StartCoroutine("MadeDamage");
+            Debug.Log(manager.life);
         }
     }
 
@@ -72,5 +81,23 @@ public class Cockroach : MonoBehaviour
             targetAngles = transform.eulerAngles + 180f * Vector3.up;
             transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, targetAngles, smooth * Time.deltaTime);
         }
+    }
+
+    IEnumerator MadeDamage()
+    {
+        yield return new WaitForSeconds(3f);
+        direction = Vector3.Normalize(target.transform.position - transform.position);
+        transform.position -= direction * npcSpeed * Time.deltaTime;
+
+        yield return new WaitForSeconds(3f);
+
+        currentState = State.Moving;
+    }
+
+    public enum State
+    {
+        None,
+        Moving,
+        Attacking
     }
 }
