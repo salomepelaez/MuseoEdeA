@@ -11,6 +11,7 @@ public class CockroachManager : MonoBehaviour
     public TextMeshProUGUI timerText;
 
     public int pointsCounter;
+    public int life;
 
     public GameObject foodPrefab;
 
@@ -28,6 +29,7 @@ public class CockroachManager : MonoBehaviour
 
     void Start()
     {
+        life = 3;
         pointsCounter = 0;
         InvokeRepeating("InstantiateFood", 1f, Random.Range(3, 10));
 

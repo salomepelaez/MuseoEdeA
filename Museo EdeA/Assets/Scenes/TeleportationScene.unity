@@ -8470,7 +8470,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 21300000, guid: 04d69de545648bb419e907032ba26f07, type: 3}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 04d69de545648bb419e907032ba26f07, type: 3}
   - {fileID: 21300000, guid: d352bc2368acac344baf991015763378, type: 3}
   - {fileID: 0}
   infoArray:
@@ -8844,7 +8844,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
-  displayID: 7
+  displayID: 8
 --- !u!65 &1080639216
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8918,7 +8918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
-  displayID: 7
+  displayID: 8
 --- !u!1 &1095985332
 GameObject:
   m_ObjectHideFlags: 0

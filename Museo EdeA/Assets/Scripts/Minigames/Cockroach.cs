@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Cockroach : MonoBehaviour
 {
+    CockroachManager manager;
+
     Transform target;
 
     Vector3 direction;
@@ -16,6 +18,7 @@ public class Cockroach : MonoBehaviour
 
     void Start()
     {
+        manager = CockroachManager.Instance;
         target = FindObjectOfType<Player>().GetComponent<Transform>();
     }
 
@@ -51,6 +54,14 @@ public class Cockroach : MonoBehaviour
             case 1:
                 transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
                 break;
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.GetComponent<Player>() != null)
+        {
+            Debug.Log("oui");
         }
     }
 
