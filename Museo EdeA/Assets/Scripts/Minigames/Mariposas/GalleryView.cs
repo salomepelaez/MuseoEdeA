@@ -2,21 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Sprites;
 
 public class GalleryView : MonoBehaviour
 {
-    public GameObject[] butterflies;
+    public Sprite[] butterflies;
+    public Image butterfly;
     public Button Right;
     public Button Left;
-    public GameObject butterfly;
     public GameObject _button;
 
     private int i = 0;
 
+    void Start()
+    {
+        //butterfly.SetActive(false);
+    }
+
     public void ActivateButtons()
     {
         _button.SetActive(true);
-        butterfly.SetActive(true);
     }
 
     public void CloseButtons()
@@ -40,6 +45,6 @@ public class GalleryView : MonoBehaviour
 
     void Update()
     {
-        butterfly = butterflies[i];
+        butterfly.GetComponent<Image>().sprite = butterflies[i];
     }
 }

@@ -25,9 +25,9 @@ public class Cricket : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.touchCount > 0)
         {
-            //GetComponent<Rigidbody2D>().AddForce(jumpHeight, ForceMode2D.Impulse);
+            Touch touch = Input.GetTouch(0);
         }
     }
 
