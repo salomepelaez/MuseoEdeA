@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigames/Survival.unity
     guid: e8fd4b1406aac8543bc0176231f70b4f
+  - enabled: 1
+    path: Assets/Scenes/Minigames/Grillos.unity
+    guid: 72d71f2460bd7d9498c4aebcfc0ff5d9
   m_configObjects: {}

@@ -18,7 +18,7 @@ public class Cricket : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            anim.SetBool("isJumping", true);
+            anim.SetTrigger("jumpTrigger");
         }
     }
 }
